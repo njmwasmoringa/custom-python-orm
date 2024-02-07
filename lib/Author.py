@@ -1,19 +1,13 @@
-from .Model import Model
+from .db import BASE
+from sqlalchemy import Column, Integer, DateTime, String
 
 """
-    This is the Author subclass that maps to authors table
+This is the Student subclass that maps to students table
 """
-class Author(Model):
-    table_name = "authors"
-    create_table_query = """
-        CREATE TABLE IF NOT EXISTS authors(
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            address TEXT
-        )
-    """
+class Author(BASE):
     
-    def __init__(self, name, address) -> None:
-        super().__init__(Author.table_name, Author.create_table_query)
-        self.name = name
-        self.address = address
+    __tablename__ = "authors"
+    
+    id = Column(Integer(), primary_key=True)
+    name = Column(String())
+    contact = Column(String())

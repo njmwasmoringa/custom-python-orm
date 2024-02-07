@@ -1,21 +1,13 @@
-from .Model import Model
+from .db import BASE
+from sqlalchemy import Column, Integer, DateTime, String
 
 """
-    This is the child class for Book that maps to books table
+This is the Student subclass that maps to students table
 """
-class Book(Model):
-    table_name = "books"
-    create_table_query = """
-            CREATE TABLE IF NOT EXISTS books(
-                id INTEGER PRIMARY KEY,
-                title TEXT,
-                author_id INTEGER
-            )
-        """
-        
-    def __init__(self, title, author) -> None:
-        super().__init__(Book.table_name, Book.create_table_query)
-        self.title = title
-        self.author_id = author.id
-        
+class Book(BASE):
     
+    __tablename__ = "books"
+    
+    id = Column(Integer(), primary_key=True)
+    title = Column(String())
+    author_id = Column(Integer())
