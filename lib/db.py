@@ -1,4 +1,5 @@
-import sqlite3
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base
 
-CONN = sqlite3.connect("school.db")
-CURSOR = CONN.cursor()
+engine = create_engine("sqlite:///school_v2.db")
+BASE = declarative_base()

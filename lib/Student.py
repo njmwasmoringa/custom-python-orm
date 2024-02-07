@@ -1,27 +1,19 @@
-from .Model import Model
+from .db import BASE
+from sqlalchemy import Column, Integer, DateTime, String
 
 """
 This is the Student subclass that maps to students table
 """
-class Student(Model):
+class Student(BASE):
     
-    table_name = "students"
-    create_table_query = """
-            CREATE TABLE IF NOT EXISTS students(
-                id INTEGER PRIMARY KEY,
-                name TEXT,
-                gender TEXT,
-                level TEXT,
-                admission_no INTEGER
-            )
-        """
+    __tablename__ = "students"
     
-    def __init__(self, name, gender, level, admission_no):
-        super().__init__(Student.table_name, Student.create_table_query)
-        self.name = name
-        self.gender = gender
-        self.level = level
-        self.admission_no = admission_no
+    id = Column(Integer(), primary_key=True)
+    name = Column(String())
+    gender = Column(String())
+    grade = Column(Integer())
+    birthday = Column(DateTime())
+    admission_no = Column(Integer())
         
     def read(self, book):
         print("Readding", book)
