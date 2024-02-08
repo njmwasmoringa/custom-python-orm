@@ -1,6 +1,9 @@
 from lib.db import BASE, engine, session
 from lib import Student, Book, Author
 from datetime import datetime
+from sqlalchemy.orm import sessionmaker
+Session = sessionmaker(bind=engine)
+session = Session()
 
 if __name__ == "__main__":
     import ipdb
