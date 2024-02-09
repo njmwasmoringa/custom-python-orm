@@ -8,3 +8,18 @@ Install pipenv to manage python environment
 
 ### Setup
 Clone the repo and run ```pipenv install``` inside the repo directory or run the following
+
+### Factionality
+### Student
+- Registration
+- Lending Book
+- Returning Book
+- Generate Report
+
+### Author
+- Registrion
+- Report
+
+### Book
+- Add a book
+- Removing

@@ -4,3 +4,5 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from db import BASE
 from Student import Student
+from Author import Author
+from Book import Book

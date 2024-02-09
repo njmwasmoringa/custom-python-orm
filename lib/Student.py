@@ -12,9 +12,9 @@ class Student(BASE):
     )
     
     id = Column(Integer(), primary_key=True)
-    name = Column(String())
+    name = Column(String(60))
     email = Column(String(55), unique=True)
-    gender = Column(String())
+    gender = Column(String(10))
     grade = Column(Integer())
     birthday = Column(DateTime())
     admission_no = Column(Integer())
