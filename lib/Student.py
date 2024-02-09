@@ -17,7 +17,7 @@ class Student(BASE):
     gender = Column(String(10))
     grade = Column(Integer())
     birthday = Column(DateTime())
-    admission_no = Column(Integer())
+    admission_no = Column(String(20))
         
     def read(self, book):
         print("Readding", book)
